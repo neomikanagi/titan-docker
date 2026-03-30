@@ -1,0 +1,6 @@
+# Titan Guardian：每周一 08:00（容器时区，默认 Asia/Shanghai）执行 main.py
+# 日志会进入 docker logs（标准输出）
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+0 8 * * 1 root cd /app && /app/.venv/bin/python /app/main.py >> /proc/1/fd/1 2>&1
